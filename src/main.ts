@@ -1,10 +1,12 @@
 import schema from './types/response.json'
+import sds from './types/yyy.json'
+// import sds from './types/ji.json'
 
 import { Validator } from 'jsonschema'
 
 const v = new Validator()
 v.addSchema(schema, '/api')
-
+v.addSchema(sds, '/api')
 
 /** 
  * 校验数据
@@ -47,7 +49,17 @@ export const getArticle = (id:number): Promise<ApiRes.Article>=>{
 }
 
 
-getArticle(23434)
-.then(res => {
-  // do something with response
-})
+// getArticle(23434)
+// .then(res => {
+//   // do something with response
+// })
+
+const demoHttp = () => {
+    const mockRes = {
+        name: true,
+    }
+    return Promise.resolve(mockRes)
+    .then(res => validateResponseData(res, `Yc.Super`))
+}
+
+demoHttp()

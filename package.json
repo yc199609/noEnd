@@ -6,7 +6,7 @@
   "scripts": {
     "start": "ts-node --files ./src/main.ts",
     "build": "tsc",
-    "json": "typescript-json-schema ./src/types/response.d.ts '*' -o ./src/types/response.json --id=api --required   --strictNullChecks"
+    "json": "cross-env typescript-json-schema src/types/response.d.ts '*' -o src/types/response.json --id=api --required   --strictNullChecks"
   },
   "repository": {
     "type": "git",
